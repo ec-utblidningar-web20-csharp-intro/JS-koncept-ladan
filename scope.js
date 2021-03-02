@@ -16,18 +16,14 @@ fetch(url)
 .then(function (json) {
     console.log("we have pikachu objekt!");
 
-    let pokemon = json;
-    // Ändra i dom när pikachu kommit
-    let parent = document.querySelector("#fetch-target");
+    // Ändra i dom när pokemonen kommit
+    let parent = document.querySelector("#scope");
     parent.insertAdjacentHTML('beforeend', `<h3>Pokemon ${pokemon.name}</h3>`);
 
     let nextUrlIndex = 0;
-    let urlArray = Object.values(pokemon.sprites);
-    // Användaren kan bara klicka på pikachu när hen får tag den
-    document.querySelector("#pikachu-btn").onclick = function (params) {
-        
-        //Ändra i dom när man klickar
-        parent.insertAdjacentHTML('beforeend', `<img src=${urlArray[nextUrlIndex]}></img>`);
+    //Ändra i dom när man klickar
+    document.querySelector("#scope #pikachu-btn").onclick = function (params) {
+    parent.insertAdjacentHTML('beforeend', `<img src=${urlArray[nextUrlIndex]}></img>`);
         nextUrlIndex += 1;
     };
 });

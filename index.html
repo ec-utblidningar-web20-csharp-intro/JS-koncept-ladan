@@ -20,7 +20,9 @@
         integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl"
         crossorigin="anonymous"></script>
 
-    <script defer="true" src="main.js"></script>
+    <script defer="true" src="scope.js"></script>
+    <!-- <script defer="true" src="komplicerad-scope.js"></script> -->
+    <script defer="true" src="async.js"></script>
 </head>
 
 <body>
@@ -45,7 +47,7 @@
 
     <h1>scope och callbacks</h1>
 
-    <section id="fetch-target">
+    <section id="scope">
         <p>Hur koden ser ut</p>
         <img width="400px" src="img/kod före.png" alt="">
         <br>
@@ -56,6 +58,25 @@
         <br>
         <p>Hur den kan delas in tidsmässigt?</p>
         <img width="400px" src="img/uträkningsordning.png" alt="">
+        <hr>
+        <button id="pikachu-btn">Log pikachu</button>
+        <!-- Här ska jag skriva ut fetchad data till DOM -->
+    </section>
+
+    <hr>
+    <h1>async vs callback</h1>
+
+    <section id="async">
+        <p>Hur koden ser ut</p>
+        <img width="400px" src="img/async från början.png" alt="">
+        <br>
+        <br>
+        <p>Vilka scope finns?</p>
+        <img width="400px" src="img/async scoping.png" alt="">
+        <br>
+        <br>
+        <p>Hur den kan delas in tidsmässigt?</p>
+        <img width="400px" src="img/async tidstolkning.png" alt="">
         <hr>
         <button id="pikachu-btn">Log pikachu</button>
         <!-- Här ska jag skriva ut fetchad data till DOM -->
