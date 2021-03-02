@@ -7,15 +7,15 @@ document.querySelector("#async #pikachu-btn").onclick = async function (event) {
     // Hämta data från pokemon web-api:n 
     let response = await fetch(url);
     console.log("we have an answer from the server");
-    let json = await response.json();
+    let pokemon = await response.json();
     console.log("we have pikachu objekt!");
 
     // Ändra i dom när pokemonen kommit
-    let parent = document.querySelector("#scope");
+    let parent = document.querySelector("#async");
     parent.insertAdjacentHTML('beforeend', `<h3>Pokemon ${pokemon.name}</h3>`);
     
     let urlArray = Object.values(pokemon.sprites);
-    parent.insertAdjacentHTML('beforeend', `<img src=${pokemon.sprites}></img>`);
+    parent.insertAdjacentHTML('beforeend', `<img src=${pokemon.sprites.front_default}></img>`);
 };
 
 console.log("main.js has finished running");

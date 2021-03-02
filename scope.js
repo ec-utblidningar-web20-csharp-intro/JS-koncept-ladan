@@ -13,7 +13,7 @@ fetch(url)
     console.log("we have an answer from the server");
     return response.json();
 })
-.then(function (json) {
+.then(function (pokemon) {
     console.log("we have pikachu objekt!");
 
     // Ändra i dom när pokemonen kommit
@@ -21,6 +21,7 @@ fetch(url)
     parent.insertAdjacentHTML('beforeend', `<h3>Pokemon ${pokemon.name}</h3>`);
 
     let nextUrlIndex = 0;
+    let urlArray = Object.values(pokemon.sprites);
     //Ändra i dom när man klickar
     document.querySelector("#scope #pikachu-btn").onclick = function (params) {
     parent.insertAdjacentHTML('beforeend', `<img src=${urlArray[nextUrlIndex]}></img>`);
